@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import {HiOutlinePlus} from "react-icons/hi";
 
 const AddButton = () => {
   return (
-    <div>AddButton</div>
-  )
-}
+    <div className="homepage__action">
+      <button className="action" type="button" title="tambah">
+        <HiOutlinePlus />
+      </button>
+    </div>
+  );
+};
 
-export default AddButton
+export default AddButton;
