@@ -1,5 +1,6 @@
 import React from "react";
 import NoteItem from "./NoteItem";
+import PropTypes from "prop-types";
 
 const NotesList = ({ notes }) => {
   return notes.length > 0 ? (
@@ -13,6 +14,10 @@ const NotesList = ({ notes }) => {
       <p>Tidak ada catatan</p>
     </div>
   );
+};
+
+NotesList.propTypes = {
+  notes: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default NotesList;
