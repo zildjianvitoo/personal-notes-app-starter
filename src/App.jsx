@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import Archive from "./pages/Archive";
 import DetailPage from "./pages/DetailPage";
 import AddNotePage from "./pages/AddNotePage";
+import Page404 from "./pages/Page404";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="notes/:id" element={<DetailPage />} />
           <Route path="/archives" element={<Archive />} />
-          <Route path="notes/new" element={<AddNotePage />} />
+          <Route path="/notes/new" element={<AddNotePage />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </main>
     </div>

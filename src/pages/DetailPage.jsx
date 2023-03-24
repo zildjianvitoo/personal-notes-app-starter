@@ -4,11 +4,11 @@ import NoteDetail from "../components/NoteDetail";
 import PropTypes from "prop-types";
 import { getNote } from "../utils/local-data";
 
-function DetailPageWrapper() {
+const DetailPageWrapper = () => {
   const { id } = useParams();
 
   return <DetailPage id={id} />;
-}
+};
 
 class DetailPage extends React.Component {
   constructor(props) {

@@ -1,31 +1,31 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
-import { getAllNotes } from "../utils/local-data";
+import { getActiveNotes } from "../utils/local-data";
 import NoteList from "../components/NotesList";
 import AddButton from "../components/AddButton";
 import PropTypes from "prop-types";
 
-function HomePageWrapper() {
+const HomePageWrapper = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const keyword = searchParams.get("keyword");
 
-  function changeSearchParams(keyword) {
+  const changeSearchParams = (keyword) => {
     setSearchParams({ keyword });
-  }
+  };
 
   return (
     <HomePage defaultKeyword={keyword} keywordChange={changeSearchParams} />
   );
-}
+};
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      notes: getAllNotes(),
+      notes: getActiveNotes(),
       keyword: props.defaultKeyword || "",
     };
 
